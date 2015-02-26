@@ -21,8 +21,8 @@ RUN chmod +x /usr/local/bin/wp
 RUN mkdir --verbose --parents /opt/wordpress
 #ADD nginx.conf /usr/local/nginx/conf/nginx.conf
 
-ONBUILD ADD wp-cli.sh /tmp/from_dockerfile/wp-cli.sh
-ONBUILD RUN bash -l /tmp/from_dockerfile/wp-cli.sh
+ADD wp-cli.sh /tmp/from_dockerfile/wp-cli.sh
+RUN bash -l /tmp/from_dockerfile/wp-cli.sh
 
 WORKDIR /opt/wordpress
 EXPOSE 80
