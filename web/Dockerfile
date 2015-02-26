@@ -33,5 +33,4 @@ ADD docker/run.sh /opt/wordpress.sh
 
 WORKDIR /opt/wordpress
 EXPOSE 80
-#CMD bash -l /opt/wordpress.sh
-CMD /bin/bash 
+CMD bash -l /opt/wordpress.sh
