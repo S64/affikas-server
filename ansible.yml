@@ -27,6 +27,7 @@
         - wget
         - python-setuptools
         - python-pip
+        - python-six
     - name: check port (firewalld)
       command: systemctl is-active firewalld
       register: firewalld_result
