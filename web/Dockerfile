@@ -22,7 +22,6 @@ RUN mv /usr/local/bin/wp-cli.phar /usr/local/bin/wp
 RUN chmod +x /usr/local/bin/wp
 
 RUN apt-get install -y mysql-client
-RUN apt-get install -y nscd
 
 RUN mkdir --verbose --parents /opt/wordpress
 #ADD nginx.conf /usr/local/nginx/conf/nginx.conf
@@ -34,4 +33,5 @@ ADD docker/run.sh /opt/wordpress.sh
 
 WORKDIR /opt/wordpress
 EXPOSE 80
-CMD bash -l /opt/wordpress.sh
+#CMD bash -l /opt/wordpress.sh
+CMD /bin/bash 
