@@ -14,6 +14,8 @@ RUN apt-get install -y hhvm hhvm-fastcgi
 RUN apt-get install -y supervisor
 ADD supervisor.conf /etc/supervisor/conf.d/supervisord.conf
 
+RUN apt-get install -y php5-cli
+
 RUN wget "https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar" -O /usr/local/bin/wp-cli.phar
 RUN mv /usr/local/bin/wp-cli.phar /usr/local/bin/wp
 RUN chmod +x /usr/local/bin/wp
@@ -21,8 +23,10 @@ RUN chmod +x /usr/local/bin/wp
 RUN mkdir --verbose --parents /opt/wordpress
 #ADD nginx.conf /usr/local/nginx/conf/nginx.conf
 
+RUN update-alternatives --set php $(which php5)
 ADD wp-cli.sh /tmp/from_dockerfile/wp-cli.sh
 RUN bash -l /tmp/from_dockerfile/wp-cli.sh
+RUN update-alternatives --set php $(which hhvm)
 
 WORKDIR /opt/wordpress
 EXPOSE 80
