@@ -18,7 +18,7 @@ RUN curl --remote-name "https://raw.githubusercontent.com/wp-cli/builds/gh-pages
 RUN chmod +x /usr/local/bin/wp
 
 RUN mkdir --verbose --parents /opt/wordpress
-ADD nginx.conf /usr/local/nginx/conf/nginx.conf
+#ADD nginx.conf /usr/local/nginx/conf/nginx.conf
 
 ADD wp-cli.sh /tmp/from_dockerfile/wp-cli.sh
 RUN bash -l /tmp/from_dockerfile/wp-cli.sh
