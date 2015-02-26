@@ -24,9 +24,11 @@ RUN chmod +x /usr/local/bin/wp
 RUN mkdir --verbose --parents /opt/wordpress
 #ADD nginx.conf /usr/local/nginx/conf/nginx.conf
 
-ADD wp-cli.sh /tmp/from_dockerfile/wp-cli.sh
-RUN bash -l /tmp/from_dockerfile/wp-cli.sh
+ADD wp-cli.sh /opt/wp-cli.sh
+#RUN bash -l /opt/wp-cli.sh
+
+ADD docker/run.sh /opt/wordpress.sh
 
 WORKDIR /opt/wordpress
 EXPOSE 80
-CMD /usr/bin/supervisord
+CMD bash -l /opt/wordpress.sh
