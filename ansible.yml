@@ -3,22 +3,22 @@
   connection: local
   tasks:
     - name: add repository (yum)
-      yum: name=$item
+      yum: name={{item}}
       with_items:
         - http://download.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
       when: ansible_pkg_mgr == 'yum'
     - name: install packages (apt)
-      apt: name=$item state=latest
+      apt: name={{item}} state=latest
       with_items:
         - docker.io
       when: ansible_pkg_mgr == 'apt'
     - name: install packages (yum)
-      yum: name=$item state=latest
+      yum: name={{item}} state=latest
       with_items:
         - docker
       when: ansible_pkg_mgr == 'yum'
     - name: install packages
-      action: $ansible_pkg_mgr name=$item
+      action: {{ansible_pkg_mgr}} name={{item}}
       with_items:
         - nano
         - tree
