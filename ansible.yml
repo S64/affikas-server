@@ -17,13 +17,24 @@
       with_items:
         - docker
       when: ansible_pkg_mgr == 'yum'
-  - name: install packages
-    action: {{ ansible_pkg_mgr }} name=$item
-    with_items:
-      - nano
-      - tree
-      - nmap
-      - curl
-      - wget
-      - python-setuptools
-      - python-pip
+    - name: install packages
+      action: {{ ansible_pkg_mgr }} name=$item
+      with_items:
+        - nano
+        - tree
+        - nmap
+        - curl
+        - wget
+        - python-setuptools
+        - python-pip
+    - name: check port (firewalld)
+      command: systemctl is-active firewalld
+      register: firewalld_result
+      ignore_errors: true
+    - name: open port (firewalld)
+      notify: reload firewalld
+      firewalld: zone=public service=http state=enabled permanent=false
+      when: firewalld_result.stdout == "active"
+  handlers:
+    - name: reload firewalld
+      service: name=firewalld state=restarted
