@@ -1,0 +1,15 @@
+nginx:
+  build: ./_nginx/
+  links:
+    - "web:web"
+  ports:
+    - "80:80"
+web:
+  build: ./web/
+  links:
+    - "web-db:mysql"
+web-db:
+  image: "mysql:5.6"
+  environment:
+    MYSQL_USER: root
+    MYSQL_DATABASE: wordpress
