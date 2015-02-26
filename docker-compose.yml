@@ -7,8 +7,8 @@ nginx:
 web:
   build: ./web/
   links:
-    - "web-db:mysql"
-web-db:
+    - "web_db:mysql"
+web_db:
   image: "mysql:5.6"
   environment:
     MYSQL_USER: root
