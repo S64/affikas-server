@@ -14,7 +14,7 @@ RUN apt-get install -y hhvm hhvm-fastcgi
 RUN apt-get install -y supervisor
 ADD supervisor.conf /etc/supervisor/conf.d/supervisord.conf
 
-RUN curl --remote-name "https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar" --output "/usr/local/bin/wp"
+RUN wget "https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar" - -O "/usr/local/bin/wp"
 RUN chmod +x /usr/local/bin/wp
 
 RUN mkdir --verbose --parents /opt/wordpress
