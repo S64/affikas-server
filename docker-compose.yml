@@ -4,8 +4,6 @@ webdb:
   environment:
     MYSQL_USER: root
     MYSQL_DATABASE: wordpress
-  expose:
-    - 3309
 web:
   hostname: web
   build: ./web/
