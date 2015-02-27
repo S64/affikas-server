@@ -1,8 +1,8 @@
 web:
   hostname: web
   build: ./web/
-  links:
-    - webdb
+#  links:
+#    - webdb
   ports:
     - 80:80
 
@@ -14,8 +14,8 @@ webdb:
 #    MYSQL_USER: root
 #    MYSQL_PASSWORD: ""
 #    MYSQL_ROOT_PASSWORD: ""
-#  links:
-#    - web:mysql
+  links:
+    - web
 
 #nginx:
 #  hostname: nginx
