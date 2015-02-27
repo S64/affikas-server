@@ -9,8 +9,10 @@ web:
   build: ./web/
   links:
     - webdb:mysql
-nginx:
-  hostname: nginx
-  build: ./_nginx/
-  ports:
-    - 80:80
+#nginx:
+#  hostname: nginx
+#  build: ./_nginx/
+#  links:
+#    - web:web
+#  ports:
+#    - 80:80
