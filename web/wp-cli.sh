@@ -6,7 +6,7 @@ cat /etc/hosts
 sleep 10
 
 wp core download --allow-root --locale=ja --path="/opt/wordpress"
-wp core config --allow-root --dbname='wordpress' --dbuser='root' --dbhost='mysql:3306' --locale=ja
+wp core config --allow-root --dbname='wordpress' --dbuser='root' --dbhost='webdb:3306' --locale=ja
 
 cat /opt/wordpress/wp-config.php
 sleep 10
