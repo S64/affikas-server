@@ -1,6 +1,6 @@
 webdb:
   hostname: webdb
-  image: "mysql:5.6"
+  image: mysql:5.7
   environment:
     MYSQL_USER: root
     MYSQL_DATABASE: wordpress
@@ -10,7 +10,7 @@ web:
   hostname: web
   build: ./web/
   links:
-    - webdb:mysql
+    - webdb
 #nginx:
 #  hostname: nginx
 #  build: ./_nginx/
