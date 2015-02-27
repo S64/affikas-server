@@ -1,3 +1,9 @@
+web:
+  hostname: web
+  build: ./web/
+  links:
+    - webdb:mysql
+
 webdb:
   hostname: webdb
   image: mysql:5.6
@@ -8,11 +14,7 @@ webdb:
 #    MYSQL_ROOT_PASSWORD: ""
 #  links:
 #    - web:mysql
-#web:
-#  hostname: web
-#  build: ./web/
-#  links:
-#    - webdb
+
 #nginx:
 #  hostname: nginx
 #  build: ./_nginx/
