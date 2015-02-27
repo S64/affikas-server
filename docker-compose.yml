@@ -9,8 +9,8 @@ webdb:
 web:
   hostname: web
   build: ./web/
-  links:
-    - webdb
+#  links:
+#    - webdb
 #nginx:
 #  hostname: nginx
 #  build: ./_nginx/
