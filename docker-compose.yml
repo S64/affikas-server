@@ -2,14 +2,14 @@ nginx:
   hostname: nginx
   build: ./_nginx/
   links:
-    - "web:web"
+    - web
   ports:
     - "80:80"
 web:
   hostname: web
   build: ./web/
   links:
-    - "webdb:mysql"
+    - webdb
 webdb:
   hostname: webdb
   image: "mysql:5.6"
