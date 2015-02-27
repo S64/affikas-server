@@ -1,8 +1,6 @@
 nginx:
   hostname: nginx
   build: ./_nginx/
-  links:
-    - web:web
   ports:
     - 80:80
 web:
