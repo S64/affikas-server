@@ -1,16 +1,18 @@
-nginx:
-  hostname: nginx
-  build: ./_nginx/
-  ports:
-    - 80:80
-web:
-  hostname: web
-  build: ./web/
-  links:
-    - webdb:mysql
 webdb:
   hostname: webdb
   image: "mysql:5.6"
   environment:
     MYSQL_USER: root
     MYSQL_DATABASE: wordpress
+web:
+  hostname: web
+  build: ./web/
+  links:
+    - webdb:mysql
+nginx:
+  hostname: nginx
+  build: ./_nginx/
+  links:
+    - web:web
+  ports:
+    - 80:80
