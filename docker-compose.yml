@@ -1,3 +1,11 @@
+nginx:
+  hostname: nginx
+  build: ./_nginx/
+  links:
+    - web:web
+  ports:
+    - 80:80
+
 web:
   hostname: web
   build: ./web/
@@ -17,11 +25,3 @@ webdb:
     - MYSQL_USER=wordpress
     - MYSQL_PASSWORD=wordpress
     - MYSQL_ROOT_PASSWORD=wordpress
-
-#nginx:
-#  hostname: nginx
-#  build: ./_nginx/
-#  links:
-#    - web:web
-#  ports:
-#    - 80:80
