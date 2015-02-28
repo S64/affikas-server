@@ -11,7 +11,7 @@ ini_set( 'log_errors', 1 );
 ini_set( 'error_log', '/opt/wp_debug.log' );
 PHP
 
-wp db create
+wp core install --allow-root --url='157.7.239.53' --title='WordPress on Affikas' --admin_user='root' --admin_password='password' --admin_email='example@example.com'
 
 wp plugin install --allow-root wp-multibyte-patch --activate
 wp plugin install --allow-root jetpack --activate
@@ -28,7 +28,7 @@ wp theme install --allow-root twentyfifteen
 
 wp theme install --allow-root wp-jurist
 
-wp db optimize
+wp db optimize --allow-root
 
 #define('DB_HOST', getenv('MYSQL_PORT_3306_TCP_ADDR').':'.getenv('MYSQL_PORT_3306_TCP_PORT'));
 
