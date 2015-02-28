@@ -11,6 +11,8 @@ ini_set( 'log_errors', 1 );
 ini_set( 'error_log', '/opt/wp_debug.log' );
 PHP
 
+wp db create
+
 wp plugin install --allow-root wp-multibyte-patch --activate
 wp plugin install --allow-root jetpack --activate
 wp plugin install --allow-root akismet
@@ -25,6 +27,8 @@ wp theme install --allow-root twentyfourteen
 wp theme install --allow-root twentyfifteen
 
 wp theme install --allow-root wp-jurist
+
+wp db optimize
 
 #define('DB_HOST', getenv('MYSQL_PORT_3306_TCP_ADDR').':'.getenv('MYSQL_PORT_3306_TCP_PORT'));
 
