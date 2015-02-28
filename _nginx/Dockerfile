@@ -10,6 +10,9 @@ ADD src/conf.docker.d/* /usr/local/nginx/conf.docker.d/
 
 ADD src/run.sh /opt/run.sh
 
+RUN apt-get install -y dnsmasq
+RUN apt-get install -y supervisor
+
 #VOLUME ["/usr/local/nginx/conf.docker.d"]
 EXPOSE 80
 CMD bash -il /opt/run.sh
