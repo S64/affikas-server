@@ -11,6 +11,8 @@ web:
   build: ./web/
   links:
     - webdb:mysql
+  volumes_from:
+    - webvolume:/opt/wordpress
 
 webdb:
   hostname: webdb
@@ -23,3 +25,13 @@ webdb:
     - MYSQL_USER=wordpress
     - MYSQL_PASSWORD=wordpress
     - MYSQL_ROOT_PASSWORD=wordpress
+  volumes_from:
+    - webdbvolume:/var/lib/mysql
+
+webvolume:
+  hostname: webvolume
+  image: busybox:latest
+
+webdbvolume:
+  hostname: webdbvolume
+  image: busybox:latest
