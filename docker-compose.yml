@@ -2,7 +2,7 @@ web:
   hostname: web
   build: ./web/
   links:
-    - webdb
+    - webdb:mysql
   ports:
     - 80:80
 
