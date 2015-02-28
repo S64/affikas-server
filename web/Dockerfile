@@ -24,6 +24,10 @@ RUN apt-get install -y mysql-client
 RUN apt-get install -y php5-mysql
 
 RUN mkdir --verbose --parents /opt/wordpress
+RUN touch /opt/wp_debug.log
+RUN touch /usr/local/nginx/logs/error.log
+RUN touch /usr/local/nginx/logs/access.log
+
 #ADD nginx.conf /usr/local/nginx/conf/nginx.conf
 
 ADD wp-cli.sh /opt/wp-cli.sh
@@ -34,4 +38,5 @@ ADD docker/run.sh /opt/wordpress.sh
 
 WORKDIR /opt/wordpress
 EXPOSE 80
-CMD bash -il /opt/wordpress.sh
+#CMD bash -il /opt/wordpress.sh
+CMD bash -il -c "supervisord"

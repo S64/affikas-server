@@ -1,1 +1,0 @@
-ENV["WEB_PORT_80_TCP_ADDR"].strip
