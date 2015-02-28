@@ -12,7 +12,6 @@ RUN apt-get -y update
 RUN apt-get install -y hhvm hhvm-fastcgi
 
 RUN apt-get install -y supervisor
-ADD supervisor.conf /etc/supervisor/conf.d/supervisord.conf
 
 RUN apt-get install -y php5-cli
 RUN update-alternatives --set php $(which hhvm)
@@ -29,6 +28,7 @@ RUN mkdir --verbose --parents /opt/wordpress
 ADD wp-cli.sh /opt/wp-cli.sh
 #RUN bash -l /opt/wp-cli.sh
 
+ADD supervisor.conf /etc/supervisor/conf.d/supervisord.conf
 ADD docker/run.sh /opt/wordpress.sh
 
 WORKDIR /opt/wordpress
