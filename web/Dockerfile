@@ -21,6 +21,7 @@ RUN mv /usr/local/bin/wp-cli.phar /usr/local/bin/wp
 RUN chmod +x /usr/local/bin/wp
 
 RUN apt-get install -y mysql-client
+RUN apt-get install -y php5-mysql
 
 RUN mkdir --verbose --parents /opt/wordpress
 #ADD nginx.conf /usr/local/nginx/conf/nginx.conf
