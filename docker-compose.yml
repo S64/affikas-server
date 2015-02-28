@@ -1,10 +1,10 @@
-#web:
-#  hostname: web
-#  build: ./web/
-#  links:
-#    - webdb:mysql
-#  ports:
-#    - 80:80
+web:
+  hostname: web
+  build: ./web/
+  links:
+    - webdb:mysql
+  ports:
+    - 80:80
 
 webdb:
   hostname: webdb
