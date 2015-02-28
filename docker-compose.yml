@@ -9,12 +9,12 @@ web:
 webdb:
   hostname: webdb
 #  image: dockerfile/mariadb:latest
-  image: dockerfile/mysql:latest
-#  environment:
-#    MYSQL_DATABASE: wordpress
+  image: mysql:5.6
+  environment:
+    MYSQL_DATABASE: wordpress
 #    MYSQL_USER: root
 #    MYSQL_PASSWORD: ""
-#    MYSQL_ROOT_PASSWORD: ""
+    MYSQL_ROOT_PASSWORD: "password"
 
 #nginx:
 #  hostname: nginx
