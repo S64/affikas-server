@@ -14,9 +14,9 @@ webdb:
   image: percona:5.6
   environment:
     MYSQL_DATABASE: wordpress
-#    MYSQL_USER: wordpress
-#    MYSQL_PASSWORD: wordpress
-    MYSQL_ROOT_PASSWORD: wordpress
+    MYSQL_USER: wordpress
+    MYSQL_PASSWORD: wordpress
+#    MYSQL_ROOT_PASSWORD: wordpress
 
 #nginx:
 #  hostname: nginx
