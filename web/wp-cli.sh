@@ -11,6 +11,21 @@ ini_set( 'log_errors', 1 );
 ini_set( 'error_log', '/opt/wp_debug.log' );
 PHP
 
+wp plugin install --allow-root wp-multibyte-patch --activate
+wp plugin install --allow-root jetpack --activate
+wp plugin install --allow-root akismet
+wp plugin install --allow-root twitter
+wp plugin install --allow-root facebook
+
+wp theme install --allow-root twentyten
+wp theme install --allow-root twentyeleven
+wp theme install --allow-root twentytwelve
+wp theme install --allow-root twentythirteen
+wp theme install --allow-root twentyfourteen
+wp theme install --allow-root twentyfifteen
+
+wp theme install --allow-root wp-jurist
+
 #define('DB_HOST', getenv('MYSQL_PORT_3306_TCP_ADDR').':'.getenv('MYSQL_PORT_3306_TCP_PORT'));
 
 popd
