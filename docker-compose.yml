@@ -11,6 +11,8 @@ web:
   build: ./web/
   links:
     - webdb:mysql
+  volumes:
+    - ./volumes/web/wordpress:/opt/wordpress
 #  volumes_from:
 #    - webvolume
 
@@ -25,6 +27,8 @@ webdb:
     - MYSQL_USER=wordpress
     - MYSQL_PASSWORD=wordpress
     - MYSQL_ROOT_PASSWORD=wordpress
+  volumes:
+    - ./volumes/web/mysql:/var/lib/mysql
 #  volumes_from:
 #    - webvolume
 
