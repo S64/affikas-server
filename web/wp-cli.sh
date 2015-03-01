@@ -15,18 +15,18 @@ wp core install --allow-root --url='157.7.239.53' --title='WordPress on Affikas'
 
 wp plugin install --allow-root wp-multibyte-patch --activate
 wp plugin install --allow-root jetpack --activate
+wp plugin install --allow-root google-sitemap-generator --activate
+wp plugin install --allow-root pushpress --activate
 wp plugin install --allow-root akismet
 wp plugin install --allow-root twitter
 wp plugin install --allow-root facebook
 wp plugin install --allow-root slack
-wp plugin install --allow-root google-sitemap-generator --activate
-wp plugin install --allow-root pushpress --activate
-wp plugin install --allow-root shortcoder --activate
-wp plugin install --allow-root video-thumbnails --activate
-wp plugin install --allow-root backwpup --activate
-wp plugin install --allow-root broken-link-checker --activate
+wp plugin install --allow-root shortcoder
+wp plugin install --allow-root video-thumbnails
+wp plugin install --allow-root backwpup
+wp plugin install --allow-root broken-link-checker
 wp plugin install --allow-root wp-basic-auth
-wp plugin install --allow-root wordfence --activate
+wp plugin install --allow-root wordfence
 #wp plugin install --allow-root crazy-bone --activate
 
 wp theme install --allow-root twentyten
@@ -37,7 +37,7 @@ wp theme install --allow-root twentyfourteen
 wp theme install --allow-root twentyfifteen
 wp theme install --allow-root wp-jurist
 
-wp theme activate --allow-root twentyfifteen 
+wp theme activate --allow-root twentyfifteen
 
 wp db optimize --allow-root
 
