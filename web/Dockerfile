@@ -30,7 +30,8 @@ RUN touch /usr/local/nginx/logs/access.log
 
 #ADD nginx.conf /usr/local/nginx/conf/nginx.conf
 
-ADD wp-cli.sh /opt/wp-cli.sh
+ADD wp-cli_install.sh /opt/wp-cli_install.sh
+ADD wp-cli_check.sh /opt/wp-cli_check.sh
 #RUN bash -l /opt/wp-cli.sh
 
 ADD supervisor.conf /etc/supervisor/conf.d/supervisord.conf
