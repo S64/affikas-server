@@ -13,5 +13,8 @@ PHP
 
 wp core install --allow-root --url='157.7.239.53' --title='WordPress on Affikas' --admin_user='root' --admin_password='password' --admin_email='example@example.com'
 
+cp /opt/composer.json.copyme /opt/wordpress/composer.json
+composer install
+
 popd
 update-alternatives --set php $(which hhvm)

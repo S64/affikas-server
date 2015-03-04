@@ -23,6 +23,9 @@ RUN chmod +x /usr/local/bin/wp
 RUN apt-get install -y mysql-client
 RUN apt-get install -y php5-mysql
 
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN chmod +x /usr/local/bin/composer
+
 #RUN mkdir --verbose --parents /opt/wordpress
 RUN touch /opt/wp_debug.log
 RUN touch /usr/local/nginx/logs/error.log
@@ -32,6 +35,7 @@ RUN touch /usr/local/nginx/logs/access.log
 
 ADD wp-cli_install.sh /opt/wp-cli_install.sh
 ADD wp-cli_check.sh /opt/wp-cli_check.sh
+ADD composer.json /opt/composer.json.copyme
 #RUN bash -l /opt/wp-cli.sh
 
 ADD supervisor.conf /etc/supervisor/conf.d/supervisord.conf
