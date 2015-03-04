@@ -16,8 +16,8 @@ wp plugin install --allow-root backwpup
 wp plugin install --allow-root broken-link-checker
 wp plugin install --allow-root wp-basic-auth
 wp plugin install --allow-root wordfence
-#wp plugin install --allow-root crazy-bone --activate
 wp plugin install --allow-root wpmandrill --activate
+#wp plugin install --allow-root crazy-bone --activate
 #wp plugin install --allow-root revisr
 #wp plugin install --allow-root gitium
 #wp plugin install --allow-root wordless

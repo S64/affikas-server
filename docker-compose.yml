@@ -14,15 +14,10 @@ web:
   privileged: true
   volumes:
     - ./volumes/web/wordpress:/opt/wordpress
-#  volumes_from:
-#    - webvolume
 
 webdb:
   hostname: webdb
-#  image: dockerfile/mariadb:latest
   image: mysql:5.6
-#  image: mariadb:10.1
-#  image: percona:5.6
   environment:
     - MYSQL_DATABASE=wordpress
     - MYSQL_USER=wordpress
@@ -31,12 +26,3 @@ webdb:
   privileged: true
   volumes:
     - ./volumes/web/mysql:/var/lib/mysql
-#  volumes_from:
-#    - webvolume
-
-#webvolume:
-#  hostname: webvolume
-#  image: busybox:latest
-#  volumes:
-#    - /opt/wordpress
-#    - /var/lib/mysql
