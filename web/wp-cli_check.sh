@@ -22,6 +22,8 @@ wp plugin install --allow-root wpmandrill --activate
 #wp plugin install --allow-root gitium
 #wp plugin install --allow-root wordless
 
+wp plugin activate --allow-root github-updater
+
 wp theme install --allow-root twentyten
 wp theme install --allow-root twentyeleven
 wp theme install --allow-root twentytwelve
