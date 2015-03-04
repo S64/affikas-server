@@ -6,6 +6,10 @@ wp plugin install --allow-root wp-multibyte-patch --activate
 wp plugin install --allow-root jetpack --activate
 wp plugin install --allow-root google-sitemap-generator --activate
 wp plugin install --allow-root pushpress --activate
+wp plugin install --allow-root wpmandrill --activate
+
+wp plugin activate --allow-root github-updater --activate
+
 wp plugin install --allow-root akismet
 wp plugin install --allow-root twitter
 wp plugin install --allow-root facebook
@@ -16,13 +20,10 @@ wp plugin install --allow-root backwpup
 wp plugin install --allow-root broken-link-checker
 wp plugin install --allow-root wp-basic-auth
 wp plugin install --allow-root wordfence
-wp plugin install --allow-root wpmandrill --activate
 #wp plugin install --allow-root crazy-bone --activate
 #wp plugin install --allow-root revisr
 #wp plugin install --allow-root gitium
 #wp plugin install --allow-root wordless
-
-wp plugin activate --allow-root github-updater
 
 wp theme install --allow-root twentyten
 wp theme install --allow-root twentyeleven
