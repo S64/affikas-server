@@ -11,7 +11,7 @@ ini_set( 'log_errors', 1 );
 ini_set( 'error_log', '/opt/wp_debug.log' );
 PHP
 
-wp core install --allow-root --url='157.7.239.53' --title='WordPress on Affikas' --admin_user='root' --admin_password='password' --admin_email='example@example.com'
+wp core install --allow-root --url='affikas.comugi.co' --title='WordPress on Affikas' --admin_user='root' --admin_password='password' --admin_email='example@example.com'
 
 cp /opt/composer.json.copyme /opt/wordpress/composer.json
 composer install
