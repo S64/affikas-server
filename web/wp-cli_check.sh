@@ -7,6 +7,7 @@ wp plugin install --allow-root jetpack --activate
 wp plugin install --allow-root google-sitemap-generator --activate
 wp plugin install --allow-root pushpress --activate
 wp plugin install --allow-root wpmandrill --activate
+wp plugin install --allow-root theme-check --activate
 
 wp plugin activate --allow-root github-updater --activate
 
